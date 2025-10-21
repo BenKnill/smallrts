@@ -1,6 +1,38 @@
 # Single‑File WebRTC Game (No Domain, Self‑Signed HTTPS/WSS)
 
-**Goal:** Ship one **self‑contained HTML file** that friends can open in Firefox. One person clicks **Host**, gets a **shareable link** (to the host’s IP/port), and others join. **No domains. No installers.** Signaling rides over **self‑signed HTTPS/WSS** on the host’s public or LAN IP. Game data flows over **WebRTC DataChannels** (P2P). Target up to **10 players**.
+**Goal:** Ship one **self‑contained HTML file** that friends can open in Firefox. One person clicks **Host**, gets a **shareable link** (to the host's IP/port), and others join. **No domains. No installers.** Signaling rides over **self‑signed HTTPS/WSS** on the host's public or LAN IP. Game data flows over **WebRTC DataChannels** (P2P). Target up to **10 players**.
+
+## Quick Start
+
+```bash
+# Clone the repo
+git clone <repo-url>
+cd smallrts
+
+# Build and run (one command does it all!)
+make serve
+
+# Or step by step:
+make build           # Creates index.html (single file with everything)
+make cert            # Generates self-signed certificate
+npm run serve        # Starts HTTPS/WSS server on port 8443
+```
+
+**To play:**
+1. Host opens `https://<your-ip>:8443` in Firefox
+2. Accept the security warning (self-signed cert)
+3. Click "Host Game" to create a room
+4. Share the displayed link with friends
+5. Friends open the link, accept warning, click "Join"
+6. Host clicks "Start Game"
+7. Play! Left-click to select units, right-click to move them
+
+**Requirements:**
+- Node.js 16+ (for building and running the server)
+- OpenSSL (for generating certificates)
+- Firefox recommended (Chrome requires additional cert trust setup)
+
+---
 
 > This README is written as a runbook for an *agent* (automation or human) to execute. It lays out constraints, decisions, tasks, and acceptance tests.
 

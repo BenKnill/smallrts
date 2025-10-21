@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmallRTS - WebRTC Game</title>
+  <style>/* CSS_PLACEHOLDER */</style>
+</head>
+<body>
+  <div id="app">
+    <div id="menu" class="screen active">
+      <h1>SmallRTS</h1>
+      <p>A peer-to-peer RTS game over WebRTC</p>
+      <div id="connection-status">Not connected</div>
+      <button id="host-btn">Host Game</button>
+      <div id="join-section">
+        <input type="text" id="room-input" placeholder="Enter room code">
+        <button id="join-btn">Join Game</button>
+      </div>
+      <div id="share-link" style="display:none;">
+        <p>Share this link with friends:</p>
+        <input type="text" id="share-url" readonly>
+        <button id="copy-btn">Copy Link</button>
+      </div>
+      <div id="lobby" style="display:none;">
+        <h3>Lobby</h3>
+        <div id="players-list"></div>
+        <button id="start-btn" style="display:none;">Start Game</button>
+      </div>
+    </div>
+    <div id="game" class="screen">
+      <canvas id="canvas" width="800" height="600"></canvas>
+      <div id="game-ui">
+        <div id="status">Players: <span id="player-count">0</span></div>
+        <div id="selected-info"></div>
+      </div>
+    </div>
+  </div>
+  <script>/* JS_PLACEHOLDER */</script>
+</body>
+</html>

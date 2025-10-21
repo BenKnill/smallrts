@@ -1,0 +1,18 @@
+# Build output (only the root index.html, not src/)
+/index.html
+
+# SSL certificates
+key.pem
+cert.pem
+openssl.cnf
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
